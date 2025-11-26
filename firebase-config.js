@@ -3,6 +3,7 @@
 // (Firebase Console -> Project settings -> SDK setup for Web)
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js';
 import { getAuth } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js';
+import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCVG9D1I9tvbmF6hSh3E_D14ZwlMPX1wYY",
@@ -17,5 +18,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
 
-export { app, auth };
+export { app, auth, db };
