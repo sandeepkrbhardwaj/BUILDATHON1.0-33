@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quick Learning</title>
+
+    <!-- Simple CSS -->
+    <style>
+        /* Gives light background to whole page */
+        * {
+            background-color: #f2f2f2;
+        }
+
+        /* When mouse goes over H1, color changes */
+        h1:hover {
+            color: rgb(9, 121, 115);
+            cursor: pointer;
+        }
+
+        /* When mouse goes over images inside .course-box, zoom effect */
+        .course-box img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+        }
+
+        /* Makes mouse look clickable on figure */
+        figure {
+            cursor: pointer;
+        }
+
+        /* Text color changes when hovering over figure */
+        figure:hover {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body class="course-box">
+
+    <!-- Top scrolling message -->
+    <div style="padding:15px; margin-left:60px;">
+        <marquee style="font-size:28px; color:#0a0a0a;" scrollamount="15">
+            <strong>Disclaimer:</strong> Work in progress — not final version.
+        </marquee>
+    </div>
+
+    <!-- HTML section title -->
+    <h1 style="margin-left:110px;"><b>HTML</b></h1>
+
+    <!-- Row of HTML lessons -->
+    <div style="display:flex; justify-content:space-evenly;">
+
+        <figure>
+            <!-- Clicking image opens video -->
+            <a href="demo.mp4">
+                <img src="images/h1.jpeg" style="width:250px; border-radius:10px;">
+            </a>
+            <!-- Text under the image -->
+            <figcaption style="text-align:center; font-size:25px;">
+                <i>Learn about h1 tag</i>
+            </figcaption>
+        </figure>
+
+        <figure>
+            <a href="demo.mp4">
+                <img src="images/img.jpeg" style="width:250px; border-radius:10px;">
+            </a>
+            <figcaption style="text-align:center; font-size:25px;">
+                <i>Learn about image tag</i>
+            </figcaption>
+        </figure>
+
+        <figure>
+            <a href="demo.mp4">
+                <img src="images/br.jpeg" style="width:250px; border-radius:10px;">
+            </a>
+            <figcaption style="text-align:center; font-size:25px;">
+                <i>Learn about break tag</i>
+            </figcaption>
+        </figure>
+
+    </div>
+
+    <!-- Second row of HTML lessons -->
+    <div style="display:flex; justify-content:space-evenly;">
+
+        <figure>
+            <a href="demo.mp4">
+                <img src="images/p.jpeg" style="width:250px; border-radius:10px;">
+            </a>
+            <figcaption style="text-align:center; font-size:25px;">
+                <i>Learn about paragraph tag</i>
+            </figcaption>
+        </figure>
+
+        <figure>
+            <a href="demo.mp4">
+                <img src="images/vid.jpeg" style="width:250px; border-radius:10px;">
+            </a>
+            <figcaption style="text-align:center; font-size:25px;">
+                <i>Learn about video tag</i>
+            </figcaption>
+        </figure>
+
+        <figure>
+            <a href="demo.mp4">
+                <img src="images/div.jpeg" style="width:250px; border-radius:10px;">
+            </a>
+            <figcaption style="text-align:center; font-size:25px;">
+                <i>Learn about div tag</i>
+            </figcaption>
+        </figure>
+    </div>
+
+    <!-- CSS section title -->
+    <h1 style="margin-left:110px;"><b>CSS</b></h1>
+
+    <!-- First CSS row -->
+    <div style="display:flex; justify-content:space-evenly;">
+        <figure>
+            <a href="demo.mp4"><img src="images/clr.jpeg" style="width:250px; border-radius:10px;"></a>
+            <figcaption style="text-align:center; font-size:25px;"><i>Learn about color</i></figcaption>
+        </figure>
+
+        <figure>
+            <a href="demo.mp4"><img src="images/h8.jpeg" style="width:250px; border-radius:10px;"></a>
+            <figcaption style="text-align:center; font-size:25px;"><i>Learn about height</i></figcaption>
+        </figure>
+
+        <figure>
+            <a href="demo.mp4"><img src="images/margin.jpeg" style="width:250px; border-radius:10px;"></a>
+            <figcaption style="text-align:center; font-size:25px;"><i>Learn about margin</i></figcaption>
+        </figure>
+    </div>
+
+    <!-- Second CSS row -->
+    <div style="display:flex; justify-content:space-evenly;">
+        <figure>
+            <a href="demo.mp4"><img src="images/border.jpeg" style="width:250px; border-radius:10px;"></a>
+            <figcaption style="text-align:center; font-size:25px;"><i>Learn about border</i></figcaption>
+        </figure>
+
+        <figure>
+            <a href="demo.mp4"><img src="images/padding.jpeg" style="width:250px; border-radius:10px;"></a>
+            <figcaption style="text-align:center; font-size:25px;"><i>Learn about padding</i></figcaption>
+        </figure>
+
+        <figure>
+            <a href="demo.mp4"><img src="images/width.jpeg" style="width:250px; border-radius:10px;"></a>
+            <figcaption style="text-align:center; font-size:25px;"><i>Learn about width</i></figcaption>
+        </figure>
+    </div>
+
+    <!-- JavaScript section title -->
+    <h1 style="margin-left:110px;"><b>JavaScript</b></h1>
+
+    <!-- First JS row -->
+    <div style="display:flex; justify-content:space-evenly;">
+        <figure>
+            <a href="demo.mp4"><img src="images/conslog.jpeg" style="width:250px; border-radius:10px;"></a>
+            <figcaption style="text-align:center; font-size:25px;"><i>Learn about console.log</i></figcaption>
+        </figure>
+
+        <figure>
+            <a href="demo.mp4"><img src="images/const.jpeg" style="width:250px; border-radius:10px;"></a>
+            <figcaption style="text-align:center; font-size:25px;"><i>Learn about const</i></figcaption>
+        </figure>
+
+        <figure>
+            <a href="demo.mp4"><img src="images/var.jpeg" style="width:250px; border-radius:10px;"></a>
+            <figcaption style="text-align:center; font-size:25px;"><i>Learn about var</i></figcaption>
+        </figure>
+    </div>
+
+    <!-- Second JS row -->
+    <div style="display:flex; justify-content:space-evenly;">
+
+        <figure>
+            <a href="demo.mp4"><img src="images/let.jpeg" style="width:250px; border-radius:10px;"></a>
+            <figcaption style="text-align:center; font-size:25px;"><i>Learn about let</i></figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/fxn.jpeg" style="width:250px; border-radius:10px;">
+            <figcaption style="text-align:center; font-size:25px;"><i>Learn about function</i></figcaption>
+        </figure>
+
+        <figure>
+            <img src="images/return.jpeg" style="width:250px; border-radius:10px;">
+            <figcaption style="text-align:center; font-size:25px;"><i>Learn about return</i></figcaption>
+        </figure>
+
+    </div>
+
+</body>
+</html>
