@@ -1,0 +1,10 @@
+# Ignore local environment files containing secrets
+firebase-config.env
+.env
+
+# Node / build
+node_modules/
+dist/
+
+# IDE
+.vscode/
