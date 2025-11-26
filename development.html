@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!-- changes done by using css -->
+    <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:Arial, sans-serif;background:#fff;}
+
+    main{
+        padding-top:40px;
+        max-width:1200px;
+        margin:auto;
+    }
+
+    /* 3 images per row  */
+    .courses{
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap:40px;
+        padding:20px;
+    }
+
+    .course-box{
+        width:100%; 
+        text-align:center;
+    }
+
+    .course-box img{
+        width:100%;                   /* ⭐ Full width */
+        height:250px;                 /* ⭐ Bigger attractive height */
+        border-radius:10px;           /* ⭐ Smooth edges */
+        object-fit:cover;             /* ⭐ Clean crop */
+        box-shadow:0 4px 10px rgba(0,0,0,0.1);  /* ⭐ Attractive shadow */
+        transition:0.3s;              /* ⭐ Hover effect */
+    }
+
+    .course-box img:hover{
+        transform:scale(1.03);        /* ⭐ Slight zoom on hover */
+        box-shadow:0 6px 20px rgba(0,0,0,0.18);
+    }
+
+    .course-box h2{
+        margin-top:12px;
+        font-size:20px;
+        font-weight:bold;
+    }
+</style>
+
+</head>
+
+<body>
+    <!-- Disclaimer added because it's just a prototype -->
+    <div style="background:#fff; padding:15px; margin-bottom:20px; margin-left:60px;">
+  <marquee behavior="scroll" direction="left" style="font-size:28px; color:#0a0a09;" scrollamount="15" >
+  <strong>Disclaimer:</strong> Work in progress — this is a functional prototype, not the final version.
+  &nbsp; 
+</marquee>
+
+</div>
+    <main>
+        <div class="courses">
+<!-- Images of Developments are added for reference -->
+            <div class="course-box">
+                <a href="matches1.html" target="mainFrame">
+                <img src="Devops.jpeg">
+                <h2>DevOps:</h2></a>
+                <br><i><p>Improves your collaboration that integrates continuous testing and efficiency. </p></i>
+            </div>
+
+            <div class="course-box">
+<a href="matches1.html" target="mainFrame">
+                <img src="cyber security.jpeg">
+                <h2>Cyber Security:</h2></a>
+                <br><i><p>Learn to protects computers by preventing unauthorized access, misuse, and damage. </p></i>
+            </div>
+
+            <div class="course-box">
+<a href="matches1.html" target="mainFrame">
+                <img src="Frontend dev.jpeg">
+                <h2>Front-End Developer:</h2></a>
+                <br><i><p>Become a pro in HTML, CSS, and JavaScript and create responsive interfaces.</p></i>
+            </div>
+
+            <div class="course-box">
+<a href="matches1.html" target="mainFrame">
+                <img src="ML.jpeg">
+                <h2>Machine Learning(ML) Development:</h2></a>
+                <br><i><p>Use algorithms, models, and large datasets to build intelligent solutions.</p></i>
+            </div>
+
+            <div class="course-box">
+<a href="matches1.html" target="mainFrame">
+                <img src="app dev.jpeg">
+                <h2>App Development:</h2></a>
+                <br><i><p>Create software applications for mobile or desktop devices by designing interfaces</p></i>
+            </div>
+
+            <div class="course-box">
+<a href="matches1.html" target="mainFrame">
+                <img src="BAck dev.jpeg">
+                <h2>Back-End Development:</h2></a>
+                <br><i><p>Build server-side logic, databases, communication between the front-end and server work smoothly. </p></i>
+            </div>
+
+            <div class="course-box">
+<a href="matches1.html" target="mainFrame">
+                <img src="Cloud comp.jpeg">
+                <h2>Cloud Computing:</h2></a>
+                <br><i><p>  Scale your businesses resources by services like storage, servers, and software over the internet.</p></i>
+            </div>
+
+            <div class="course-box">
+<a href="matches1.html" target="mainFrame">
+                <img src="AI dev.png">
+                <h2>Artificial Intelligence (AI):</h2></a>
+                <br><i><p>Learn Artificial Intelligence enables machines to learn, think, and make decisions like humans .</p></i>
+            </div>
+
+        </div>
+        
+    </main>
+    
+</body>
+</html>
