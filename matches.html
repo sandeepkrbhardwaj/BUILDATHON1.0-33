@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matches</title>
+
+    <!-- ZEGOCLOUD PREBUILT SDK -->
+    <script src="https://cdn.zegocloud.com/prebuilt/2.7.0/index.js"></script>
+
+    <style>
+        body {
+            background-color: rgb(197, 214, 208);
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            margin-left: 20px;
+        }
+
+        .match-box {
+            margin-left: 20px;
+            background-color: rgb(241, 241, 197);
+            margin-bottom: 8px;
+            border-radius: 5px;
+            font-size: 20px;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .start-btn {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .start-btn:hover {
+            background-color: darkgreen;
+        }
+
+        #videoCallArea {
+            width: 95%;
+            height: 500px;
+            margin: 20px auto;
+            background: #000;
+            border-radius: 10px;
+            display: none; /* hidden until Start is clicked */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Matches 🔄</h1>
+
+    <div class="match-box">
+        Connect with Shalini...
+       <a href="https://console-api-sig.zegocloud.com/s/uikit/YfMNZ3"> <button class="start-btn" onclick="startCall('Shalini')">Start</button></a>
+    </div>
+
+    <div class="match-box">
+        Connect with Soumya...
+       <a href="https://console-api-sig.zegocloud.com/s/uikit/YfMNZ3"> <button class="start-btn" onclick="startCall('Soumya')">Start</button></a>
+    </div>
+
+    <div class="match-box">
+        Connect with Rini...
+        <a href="https://console-api-sig.zegocloud.com/s/uikit/YfMNZ3">
+        <button class="start-btn" onclick="startCall('Rini')">Start</button></a>
+    </div>
+
+    <!-- CALL APPEARS HERE -->
+    <div id="videoCallArea"></div>
+
+
+<script>
+function startCall(personName) {
+
+    // Your credentials
+    const appID = 805685182;
+    const appSign = "9a058a4eed9a4fa7c75e99c108574a49";
+
+    const roomID = personName + "_Room";
+    const userID = "user_" + Date.now();
+    const userName = "You";
+
+    // Generate token
+    const token = ZegoUIKitPrebuilt.generateKitTokenForTest(
+        appID,
+        appSign,
+        roomID,
+        userID,
+        userName
+    );
+
+    // Show call area
+    document.getElementById("videoCallArea").style.display = "block";
+
+    // Create call UI
+    const zp = ZegoUIKitPrebuilt.create(token);
+    zp.joinRoom({
+        container: document.getElementById("videoCallArea"),
+        sharedLinks: [],
+        scenario: {
+            mode: ZegoUIKitPrebuilt.VideoConference
+        }
+    });
+}
+</script>
+
+</body>
+</html>
