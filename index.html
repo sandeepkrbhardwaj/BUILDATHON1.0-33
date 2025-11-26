@@ -149,7 +149,7 @@ img:hover {
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="nav-left">
-      <img src="logo.jpeg" class="logo">
+      <img src="logo1.jpg" class="logo">
       <a class="brand" href="index.html">Techverse</a>
     </div>
 
@@ -208,18 +208,54 @@ img:hover {
     modal.onclick = e => { if(e.target===modal) closeModal(); };
     window.onkeydown = e => { if(e.key==="Escape") closeModal(); };
 
-    /* LOGIN POPUP */
-    document.getElementById("loginBtn").onclick = function(){
+    // Dynamically load Firebase auth for login
+    async function initLoginPopup() {
+      const { auth } = await import('./firebase-config.js');
+      const { signInWithEmailAndPassword } = await import('https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js');
+
       popupBody.innerHTML = `
         <h2 style="text-align:center;">Login</h2>
-        <form onsubmit="event.preventDefault(); alert('Logged In!'); closeModal();">
-          <input type="email" placeholder="Email" required>
-          <input type="password" placeholder="Password" required>
-          <a href="login-page.html" class="btn" class="text-decoration" style="display:inline-block; width:100%; text-align:center; box-sizing:border-box; padding:8px 14px;">
-        Login
-      </a>
+        <form id="indexLoginForm">
+          <input type="email" id="indexLoginEmail" placeholder="Email" required>
+          <input type="password" id="indexLoginPassword" placeholder="Password" required>
+          <button type="submit" class="btn" style="display:block; width:100%; margin-top:8px;">Login</button>
         </form>
+        <div id="indexLoginMessage" style="margin-top: 12px; text-align: center; font-size: 14px; min-height: 20px;"></div>
       `;
+
+      const form = document.getElementById('indexLoginForm');
+      const emailInput = document.getElementById('indexLoginEmail');
+      const passwordInput = document.getElementById('indexLoginPassword');
+      const messageEl = document.getElementById('indexLoginMessage');
+
+      function showMessage(msg, isError = true) {
+        messageEl.textContent = msg;
+        messageEl.style.color = isError ? '#b00020' : '#078a34';
+      }
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = (emailInput || {}).value?.trim();
+        const password = (passwordInput || {}).value || '';
+        if (!email || !password) { showMessage('Enter email and password'); return; }
+        try {
+          showMessage('Logging in...', false);
+          await signInWithEmailAndPassword(auth, email, password);
+          showMessage('Logged in! Redirecting...', false);
+          setTimeout(() => {
+            closeModal();
+            window.location.href = 'login-page.html';
+          }, 1000);
+        } catch (err) {
+          console.error(err);
+          showMessage(err?.message || 'Login failed');
+        }
+      });
+    }
+
+    /* LOGIN POPUP */
+    document.getElementById("loginBtn").onclick = function(){
+      initLoginPopup();
       openModal();
     };
 
